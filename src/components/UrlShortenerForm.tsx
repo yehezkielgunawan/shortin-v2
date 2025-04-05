@@ -10,7 +10,7 @@ export default function UrlShortenerForm() {
 	const [alias, setAlias] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 	const [shortenedUrl, setShortenedUrl] = useState<string | null>(null);
-	const domain = "shortin.yehezgun.com"; // Replace with your actual domain
+	const domain = "shortin.yehezgun.com";
 
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
