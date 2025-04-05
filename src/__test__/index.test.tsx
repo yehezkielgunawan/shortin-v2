@@ -5,6 +5,6 @@ import Home from "@/app/page";
 test("Home Page Render", () => {
 	render(<Home />);
 	expect(
-		screen.getByRole("heading", { level: 1, name: "Hello world!" }),
+		screen.getByRole("heading", { level: 1, name: "URL Shortener" }),
 	).toBeDefined();
 });
