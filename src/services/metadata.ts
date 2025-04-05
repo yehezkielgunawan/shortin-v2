@@ -17,15 +17,15 @@ export const metadataContent = ({
 }: OGImageProps): Metadata => ({
 	title,
 	description,
-	category: "personal",
+	category: "website",
 	manifest: "/manifest.json",
 	icons: {
-		icon: ["/yehez-icon.svg"],
-		shortcut: ["/yehez-icon.svg"],
-		apple: ["/yehez-icon.svg"],
+		icon: ["/icon512_maskable.png"],
+		shortcut: ["/icon512_maskable.png"],
+		apple: ["/icon512_maskable.png"],
 		other: {
 			rel: "icon",
-			url: "/yehez-icon.svg",
+			url: "/icon512_maskable.png",
 		},
 	},
 	openGraph: {

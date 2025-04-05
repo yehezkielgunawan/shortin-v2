@@ -1,22 +1,17 @@
 import GeneralWrapper from "@/components/GeneralWrapper";
+import UrlShortenerForm from "@/components/UrlShortenerForm";
 
 export default function Home() {
 	return (
 		<GeneralWrapper>
-			<h1>Hello world!</h1>
-			<code>
-				This is just a starter template, made using Next.js app dir + Typescript
-				+ Tailwind CSS (with Daisy UI).
-			</code>
-			<div className="mt-12 flex w-full items-center justify-center">
-				<a
-					href="https://github.com/new?template_name=next14-starter&template_owner=yehezkielgunawan"
-					target="_blank"
-					className="btn"
-					rel="noreferrer"
-				>
-					Generate Project using this template
-				</a>
+			<div className="mx-auto w-full max-w-3xl">
+				<h1 className="mb-6 text-center font-bold text-2xl md:text-3xl">
+					URL Shortener
+				</h1>
+
+				<UrlShortenerForm />
+
+				{/* Results will be displayed here when API is integrated */}
 			</div>
 		</GeneralWrapper>
 	);
