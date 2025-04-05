@@ -44,6 +44,10 @@ export default function UrlShortenerForm() {
 						className="input input-bordered w-full"
 						value={longUrl}
 						onChange={(e) => setLongUrl(e.target.value)}
+						// will focus here when first loaded
+						onFocus={(e) => {
+							e.target.select();
+						}}
 						required
 					/>
 				</div>
@@ -62,6 +66,10 @@ export default function UrlShortenerForm() {
 							className="input input-bordered flex-1 rounded-l-none"
 							value={alias}
 							onChange={(e) => setAlias(e.target.value)}
+							// will focus here when pressing tab
+							onFocus={(e) => {
+								e.target.select();
+							}}
 						/>
 					</div>
 					<label htmlFor="staticLabel" className="label">
@@ -69,7 +77,17 @@ export default function UrlShortenerForm() {
 					</label>
 				</div>
 
-				<button type="submit" className="btn btn-primary w-full">
+				<button
+					type="submit"
+					className="btn btn-primary w-full"
+					// will submit the form when pressing enter
+					onKeyDown={(e) => {
+						if (e.key === "Enter") {
+							handleSubmit(e as unknown as FormEvent<HTMLFormElement>);
+						}
+					}}
+					disabled={isLoading}
+				>
 					{isLoading ? <span className="loading loading-spinner" /> : null}
 					Shorten URL
 				</button>
