@@ -1,4 +1,4 @@
-name: Template CI
+name: Shortin CI
 
 on:
   pull_request:
@@ -32,3 +32,5 @@ jobs:
       run: pnpm test:ci
     - name: Build
       run: pnpm build
+      env:
+        NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
