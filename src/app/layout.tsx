@@ -7,9 +7,8 @@ import { metadataContent } from "@/services/metadata";
 const inter = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = metadataContent({
-	title: "Yehezgun's Next.js 14 Starter Template",
-	description:
-		"A starter template for Next.js 14 with TypeScript, Tailwind CSS, and Daisy UI",
+	title: "Shortin",
+	description: "Shorten your URLs with Shortin - the ultimate URL shortener.",
 });
 
 export default function RootLayout({

@@ -13,7 +13,7 @@ const Header = () => {
 			<nav className="container mx-auto lg:max-w-5xl">
 				<div className="navbar px-0">
 					<div className="flex-1">
-						<a href="/">NextJS 14 Template</a>
+						<a href="/">Shortin</a>
 					</div>
 					<div className="flex-none">
 						<ul className="menu menu-horizontal">
