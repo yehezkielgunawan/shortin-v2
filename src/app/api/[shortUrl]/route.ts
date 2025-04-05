@@ -1,7 +1,8 @@
-export async function GET(
-	_request: Request,
-	{ params }: { params: { shortUrl: string } },
-) {
+type Params = Promise<{
+	shortUrl: string;
+}>;
+
+export async function GET(_request: Request, { params }: { params: Params }) {
 	const { shortUrl } = await params;
 	if (!shortUrl) {
 		return new Response("No URL", { status: 400 });

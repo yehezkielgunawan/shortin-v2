@@ -4,13 +4,17 @@ import { useRouter } from "next/navigation";
 import { getLongUrl } from "@/services/shorten";
 import { notFound } from "next/navigation";
 
+type Params = Promise<{
+	slug: string;
+}>;
+
 export default async function RedirectPage({
 	params,
 }: {
-	params: { slug: string };
+	params: Params;
 }) {
 	const router = useRouter();
-	const { slug } = params;
+	const { slug } = await params;
 	try {
 		const data = await getLongUrl(slug);
 		if (!data) {
