@@ -19,7 +19,7 @@ const Header = () => {
 						<ul className="menu menu-horizontal">
 							<li>
 								<a
-									href="https://github.com/yehezkielgunawan/next14-starter"
+									href="https://github.com/yehezkielgunawan/shortin-v2"
 									target="_blank"
 									className="btn btn-ghost btn-sm"
 									rel="noreferrer"
