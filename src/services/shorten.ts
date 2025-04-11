@@ -31,7 +31,10 @@ export const shortenUrl = async (
 	return data.data;
 };
 
-export const getLongUrl = async (shortUrl: string): Promise<BaseResType> => {
+// GET the long URL from the API Route
+export const getLongUrlAPIRoute = async (
+	shortUrl: string,
+): Promise<BaseResType> => {
 	// fetch the /api/[shortUrl] endpoint
 	const response = await fetch(`/api/${shortUrl}`, {
 		method: "GET",

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { getLongUrl } from "@/services/shorten";
+import { getLongUrlAPIRoute } from "@/services/shorten";
 import { notFound } from "next/navigation";
 
 type Params = Promise<{
@@ -16,7 +16,7 @@ export default async function RedirectPage({
 	const router = useRouter();
 	const { slug } = await params;
 	try {
-		const data = await getLongUrl(slug);
+		const data = await getLongUrlAPIRoute(slug);
 		if (!data) {
 			notFound();
 		}
