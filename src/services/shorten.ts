@@ -31,7 +31,10 @@ export const shortenUrl = async (
 	return data.data;
 };
 
-export const getLongUrl = async (shortUrl: string): Promise<BaseResType> => {
+// GET the long URL from the API Route
+export const getLongUrlAPIRoute = async (
+	shortUrl: string,
+): Promise<BaseResType> => {
 	// fetch the /api/[shortUrl] endpoint
 	const response = await fetch(`/api/${shortUrl}`, {
 		method: "GET",
@@ -43,5 +46,26 @@ export const getLongUrl = async (shortUrl: string): Promise<BaseResType> => {
 		throw new Error("Failed to get long URL");
 	}
 	const data = await response.json();
+	return data.data;
+};
+
+// GET the long URL directly from the API
+// This is used in the server-side code
+export const getLongUrl = async (shortUrl: string): Promise<BaseResType> => {
+	// fetch the /api/shorten endpoint
+	const response = await fetch(
+		`${process.env.NEXT_PUBLIC_API_URL}/${shortUrl}`,
+		{
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		},
+	);
+	const data = await response.json();
+
+	if (!response.ok) {
+		throw new Error("No URL");
+	}
 	return data.data;
 };

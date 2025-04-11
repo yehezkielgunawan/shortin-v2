@@ -1,5 +1,9 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from "vitest";
-import { shortenUrl, getLongUrl, type BaseResType } from "@/services/shorten";
+import {
+	shortenUrl,
+	getLongUrlAPIRoute,
+	type BaseResType,
+} from "@/services/shorten";
 
 describe("URL Shortening Service", () => {
 	beforeEach(() => {
@@ -93,7 +97,7 @@ describe("URL Shortening Service", () => {
 		});
 	});
 
-	describe("getLongUrl", () => {
+	describe("getLongUrlAPIRoute", () => {
 		it("should return URL data when successful", async () => {
 			// Mock response data
 			const mockResponse: BaseResType = {
@@ -112,7 +116,7 @@ describe("URL Shortening Service", () => {
 			} as Response);
 
 			// Call the function
-			const result = await getLongUrl("abc123");
+			const result = await getLongUrlAPIRoute("abc123");
 
 			// Assertions
 			expect(global.fetch).toHaveBeenCalledWith("/api/abc123", {
@@ -131,7 +135,7 @@ describe("URL Shortening Service", () => {
 			} as Response);
 
 			// Assert that calling the function throws an error
-			await expect(getLongUrl("abc123")).rejects.toThrow(
+			await expect(getLongUrlAPIRoute("abc123")).rejects.toThrow(
 				"Failed to get long URL",
 			);
 		});
