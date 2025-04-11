@@ -7,7 +7,7 @@ type OGImageProps = {
 };
 
 export function generateOGImage({ title, description }: OGImageProps) {
-	return `https://og-v2.yehezgun.com/api/og?title=${encodeURIComponent(title)}&desc=${encodeURIComponent(description)}&siteName=yehezgun.com&socialMedia=Twitter:%20@yehezgun`;
+	return `https://og-v2.yehezgun.com/api/og?title=${encodeURIComponent(title)}&desc=${encodeURIComponent(description)}&imgUrl=https://shortin.yehezgun.com/icon512_maskable.png&siteName=shortin.yehezgun.com&socialMedia=Twitter:%20@yehezgun`;
 }
 
 export const metadataContent = ({
