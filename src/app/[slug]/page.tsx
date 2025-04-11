@@ -1,8 +1,5 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { getLongUrlAPIRoute } from "@/services/shorten";
-import { notFound } from "next/navigation";
+import { getLongUrl } from "@/services/shorten";
+import { notFound, redirect } from "next/navigation";
 
 type Params = Promise<{
 	slug: string;
@@ -13,20 +10,16 @@ export default async function RedirectPage({
 }: {
 	params: Params;
 }) {
-	const router = useRouter();
 	const { slug } = await params;
+
 	try {
-		const data = await getLongUrlAPIRoute(slug);
+		const data = await getLongUrl(slug);
 		if (!data) {
 			notFound();
 		}
-		router.push(data.url);
+		redirect(data.url);
 	} catch (error) {
 		console.error("Error fetching long URL:", error);
 		notFound();
 	}
-	return (
-		// just display redirecting message
-		<h1>Redirecting...</h1>
-	);
 }
