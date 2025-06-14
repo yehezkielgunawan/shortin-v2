@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build --turbopack",
-    "start": "next start",
     "biome:format": "biome format --write src/",
     "biome:lint": "biome lint --write src/",
     "biome:lint:ci": "biome lint src/",
+    "build": "next build --turbopack",
+    "dev": "next dev",
+    "start": "next start",
     "test": "vitest",
     "test:ci": "vitest --run",
-    "up-latest": "pnpm up --latest"
+    "up-latest": "pnpm up --latest",
+    "sst:dev": "sst dev",
+    "sst:deploy": "sst deploy --stage production"
   },
   "dependencies": {
     "next": "15.3.2",
@@ -19,7 +21,8 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hot-toast": "^2.5.2",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "sst": "3.17.5"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
