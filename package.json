@@ -11,9 +11,7 @@
     "start": "next start",
     "test": "vitest",
     "test:ci": "vitest --run",
-    "up-latest": "pnpm up --latest",
-    "sst:dev": "sst dev",
-    "sst:deploy": "sst deploy --stage production"
+    "up-latest": "pnpm up --latest"
   },
   "dependencies": {
     "next": "15.3.2",
@@ -21,8 +19,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hot-toast": "^2.5.2",
-    "react-icons": "^5.5.0",
-    "sst": "3.17.5"
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
